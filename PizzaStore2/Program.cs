@@ -1,15 +1,18 @@
-﻿namespace PizzaStore2
+﻿using System.Dynamic;
+
+namespace PizzaStore2
 {
     internal class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Costumer costumer = new Costumer("", 0);
-            Order order = new Order("", 0);
+            Costumer cos = new Costumer("", 0);
             Pizza pizza = new Pizza("", 0);
+            Order order = new Order(pizza,cos, 0);
             PizzaStore pizzastore = new PizzaStore();
 
-            
+            pizzastore.Start();
+            Console.WriteLine();
         }
     }
 }
