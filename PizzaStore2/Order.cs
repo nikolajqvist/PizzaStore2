@@ -27,7 +27,7 @@ namespace PizzaStore2
         public DateTime Date { get { return _date; } }
         public int NumberOfPizza { get{ return _numberOfPizza; } }
 
-        public int OrderId { get => _orderId; set => _orderId = value; }
+        public int OrderId { get => _orderId; private set => _orderId = value; }
         public int OrderNumber { get { return _orderNumber; } }
 
         public int MorePizza { get => _morePizza; set => _morePizza = value; }
