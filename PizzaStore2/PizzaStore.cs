@@ -9,12 +9,14 @@ namespace PizzaStore2
 {
     public class PizzaStore
     {
+        //Her opretter jeg min Start metode som jeg så skriver alle mine pizzaer, costumers og ordre i også udskriver jeg det hele.
         public void Start()
         {
             //Når man kalder en costruktor med objekter i skal den puttes i en metode.
+            //Her opretter jeg alle mine objekter til mine classes.
             Pizza pizza1 = new Pizza("Margarita", 100);
             Costumer cos1 = new Costumer("Mogens", 56);
-            Order order1 = new Order(pizza1, cos1, 3);
+            Order order1 = new Order(pizza1, cos1, 1);
             order1.CalculateTotalPrice();
             Console.WriteLine(order1);
 

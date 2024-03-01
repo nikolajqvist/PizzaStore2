@@ -8,7 +8,9 @@ namespace PizzaStore2
 {
     public class Order
     {
-        private Pizza _pizzaname;
+        //I den her class opretter jeg en ordre med hjælp fra Pizza.cs og Costumer.cs. Har lavet det sådan så en ordre ikke kan oprettes uden en Pizza, en kunde 
+        // og hvor mange pizzaer de vil have.
+        private Pizza _pizza;
         private Costumer _name;
         private Pizza _price;
         private int _morePizza;
@@ -21,12 +23,12 @@ namespace PizzaStore2
 
 
 
-
-        public Order(Pizza Pizzaname, Costumer Name, int NumberOfPizza) 
+        ///Her er hvad en ordre skal indeholde
+        public Order(Pizza Pizza, Costumer Name, int NumberOfPizza) 
         {
             _orderId = _idcounter;
             _idcounter++;
-            _pizzaname = Pizzaname;
+            _pizza = Pizza;
             _name = Name;
             _totalPrice = TotalPrice;
             _date = DateTime.Now;
@@ -34,24 +36,26 @@ namespace PizzaStore2
             _numberOfPizza = NumberOfPizza;
 
         }
-        public Pizza Pizzaname { get => _pizzaname; set => _pizzaname = value; }
+        //Det her er mine properties.
+        public Pizza Pizza { get => _pizza; set => _pizza = value; }
         public Costumer Name { get => _name; set => _name = value; }
         public Pizza Price { get => _price; set => _price = value; }
         public int TotalPrice { get { return _totalPrice; } }
         public DateTime Date { get { return _date; } }
         public int NumberOfPizza { get { return _numberOfPizza; } }
-
         public int OrderId { get => _orderId; private set => _orderId = value; }
         public int OrderNumber { get { return _orderNumber; } }
-
         public int MorePizza { get => _morePizza; set => _morePizza = value; }
+        
+        //Her laver jeg en metode som udregner hele prisen for ordren.
         public void CalculateTotalPrice()
         {
-            _totalPrice = Pizzaname.Price * NumberOfPizza + 40;
+            _totalPrice = Pizza.Price * NumberOfPizza + 40;
         }
+        //Her udskriver jeg hvad en ordre skal indeholde.
         public override string ToString()
         {
-            return $"Ordernr:{OrderId} Tid:{Date}. {Pizzaname} kr." +
+            return $"Ordernr:{OrderId} Tid:{Date}. {Pizza} kr." +
                 $" + 40 kr. in shipping and the total price is {TotalPrice} kr. and there is {NumberOfPizza} pizzas. For {Name}!";
         }
     }

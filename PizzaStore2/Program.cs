@@ -4,6 +4,8 @@ namespace PizzaStore2
 {
     internal class Program
     {
+        //Her opretter jeg et objekt for alle classes så Main ved hviken class den skal lede efter
+        //Også opretter jeg PizzaStore.cs herinde og kalder min metode Start(), så udskriver jeg det hele.
         public static void Main(string[] args)
         {
             Costumer cos = new Costumer("", 0);
