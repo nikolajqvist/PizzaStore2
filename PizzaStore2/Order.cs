@@ -13,7 +13,6 @@ namespace PizzaStore2
         private Pizza _pizza;
         private Costumer _name;
         private Pizza _price;
-        private int _morePizza;
         private int _totalPrice;
         private int _orderId;
         private int _orderNumber;
@@ -45,7 +44,6 @@ namespace PizzaStore2
         public int NumberOfPizza { get { return _numberOfPizza; } }
         public int OrderId { get => _orderId; private set => _orderId = value; }
         public int OrderNumber { get { return _orderNumber; } }
-        public int MorePizza { get => _morePizza; set => _morePizza = value; }
         
         //Her laver jeg en metode som udregner hele prisen for ordren.
         public void CalculateTotalPrice()
