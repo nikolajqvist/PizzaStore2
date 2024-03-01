@@ -20,17 +20,7 @@ namespace PizzaStore2
         private int _numberOfPizza;
 
 
-        public Pizza Pizzaname { get => _pizzaname; set => _pizzaname = value; }
-        public Costumer Name { get => _name; set => _name = value; }
-        public Pizza Price { get => _price; set => _price = value; } 
-        public int TotalPrice { get { return _totalPrice; } }
-        public DateTime Date { get { return _date; } }
-        public int NumberOfPizza { get{ return _numberOfPizza; } }
 
-        public int OrderId { get => _orderId; private set => _orderId = value; }
-        public int OrderNumber { get { return _orderNumber; } }
-
-        public int MorePizza { get => _morePizza; set => _morePizza = value; }
 
         public Order(Pizza Pizzaname, Costumer Name, int NumberOfPizza) 
         {
@@ -44,6 +34,17 @@ namespace PizzaStore2
             _numberOfPizza = NumberOfPizza;
 
         }
+        public Pizza Pizzaname { get => _pizzaname; set => _pizzaname = value; }
+        public Costumer Name { get => _name; set => _name = value; }
+        public Pizza Price { get => _price; set => _price = value; }
+        public int TotalPrice { get { return _totalPrice; } }
+        public DateTime Date { get { return _date; } }
+        public int NumberOfPizza { get { return _numberOfPizza; } }
+
+        public int OrderId { get => _orderId; private set => _orderId = value; }
+        public int OrderNumber { get { return _orderNumber; } }
+
+        public int MorePizza { get => _morePizza; set => _morePizza = value; }
         public void CalculateTotalPrice()
         {
             _totalPrice = Pizzaname.Price * NumberOfPizza + 40;

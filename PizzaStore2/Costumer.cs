@@ -13,10 +13,7 @@ namespace PizzaStore2
         private int _age;
         private string _adress;
 
-        public string CostumerName { get { return _costumerName;} }
-        public int Age { get { return _age;} }
 
-        public string Adress { get => _adress; private set => _adress = value; }
 
         public Costumer(string CostumerName, int Age)
         {
@@ -24,6 +21,11 @@ namespace PizzaStore2
             _age = Age;
             _adress = Adress;
         }
+
+        public string CostumerName { get { return _costumerName; } }
+        public int Age { get { return _age; } }
+
+        public string Adress { get => _adress; private set => _adress = value; }
         public override string ToString()
         {
             return $"{CostumerName}";
