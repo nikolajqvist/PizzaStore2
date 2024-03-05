@@ -50,11 +50,12 @@ namespace PizzaStore2
         {
             _totalPrice = Pizza.Price * NumberOfPizza + 40;
         }
-        //Her udskriver jeg hvad en ordre skal indeholde.
+        //Her udskriver jeg hvad en ordre skal indeholde.  \n giver mellemrum.
         public override string ToString()
         {
-            return $"Ordernr:{OrderId} Tid:{Date}. {Pizza} kr." +
-                $" + 40 kr. in shipping and the total price is {TotalPrice} kr. and there is {NumberOfPizza} pizzas. For {Name}!";
+            return $"Ordernr:{OrderId} Tid:{Date}. {Pizza} kr.\n" +
+                $" + 40 kr. in shipping and the total price is" +
+                $" {TotalPrice} kr. \n and there is {NumberOfPizza} pizzas. For {Name}!";
         }
     }
 }
